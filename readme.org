@@ -1,0 +1,37 @@
+#+TITLE: CS 410 TCP Chat Lab
+#+AUTHOR: Adam Schwartz
+#+DATE: December 11, 2016
+#+OPTIONS: ':true *:true toc:nil num:nil
+
+Chatd is a simple multi-threaded TCP chat server and client written in C.
+
+[[file:screenshot.png]]
+
+* Building
+  - =make= to build project client and server binaries
+  - =make clean= to remove client and server binaries
+
+* Running
+  - =./server <port>= starts the chatd server
+  - =./client <hostname> <port>= launches client and connects to server
+    
+* Chatd Protocol
+- =/user <name>=
+  - changes username
+- =/post <message>=
+  - send a message to the server (and connected clients)
+- =/who=
+  - list connected clients
+- =/help=
+  - list available commands
+- =/quit=
+  - disconnect from server
+      
+* Notes
+  - Unimplemented
+    - error and success status codes
+  - Observations
+    - Messages are read from the server and printed to the client's
+      screen every 2 seconds.
+    - Client must press =return= (or send empty message) twice before
+      the client program will exit after disconnecting from the sever.
